@@ -1,4 +1,5 @@
 import { Controller, Get, Query } from '@nestjs/common';
+import { ResponseNews } from './dto/news.dto';
 import { NewsService } from './news.service';
 
 @Controller('news')
@@ -9,12 +10,12 @@ export class NewsController {
     ){}
     
     @Get('/everything')
-    async getAllNews(@Query() query) {
+    async getAllNews(@Query() query): Promise<ResponseNews> {
         return this.newsService.getAllNews(query, true)
     }
 
     @Get('/top-headlines')
-    async getTopHeadlinesNews(@Query() query) {
+    async getTopHeadlinesNews(@Query() query): Promise<ResponseNews> {
         return this.newsService.getAllNews(query, false)
     }
 }

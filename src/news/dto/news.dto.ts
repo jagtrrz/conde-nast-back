@@ -19,3 +19,9 @@ export class Source {
     id: string;
     name: string
 }
+
+export class ResponseNews {
+    status: number;
+    data: NewsResponseApi;
+    message?: string;
+}

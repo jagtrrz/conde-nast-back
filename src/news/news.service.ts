@@ -13,7 +13,7 @@ export class NewsService {
         private httpService: HttpService,
     ){
     }
-    async getAllNews(query: number, isEverything: boolean)  {
+    async getAllNews(query: any, isEverything: boolean)  {
         const _query = Object.keys(query)
             .map((key) => key + "=" + query[key])
             .join("&")
